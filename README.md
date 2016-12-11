@@ -16,6 +16,7 @@ This repository is a template of the npm package.
         "build": "rollup src/main.js -c -o dist/sample.js --name Sample"
       }
     ```
+    also change "Sample" and "dist/sample.js" in build command to whatever you want to use.
 
 1. replace main in package.json with "dist/sample.js"
 1. rewrite description in package.json
