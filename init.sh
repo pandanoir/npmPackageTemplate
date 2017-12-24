@@ -1,17 +1,21 @@
 #!bin/sh
 rm -rf .git
 if type npm >/dev/null 2>&1; then
+    echo "init npm"
     npm init --yes
     npm install --save-dev mocha rollup
+    echo "done"
 else
     echo "you must install npm!"
     exit 1
 fi
 
+echo "making src/ and test/..."
 mkdir src
 mkdir test
 touch src/main.js
 touch test/main.js
+echo "done"
 
 name=$(basename `pwd`)
 moduleName=$(echo|awk -v "var=$name" "{print toupper(substr(var,1,1))substr(var,2);}")
