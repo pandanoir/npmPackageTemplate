@@ -3,7 +3,12 @@ rm -rf .git
 if type npm >/dev/null 2>&1; then
     echo "init npm"
     npm init --yes
-    npm install --save-dev mocha rollup
+    echo "installing mocha and rollup..."
+    if type yarn >/dev/null 2>&1; then
+        yarn add -D mocha rollup
+    else
+        npm install --save-dev mocha rollup
+    fi
     echo "done"
 else
     echo "you must install npm!"
