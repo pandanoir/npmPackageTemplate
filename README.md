@@ -28,3 +28,5 @@ export default () => src('src/css/*.css')
     .pipe(postcss([]))
     .pipe(dest('dist/css'));
 ```
+
+add `"build:css": "gulp --require reify"` to scripts in package.json
